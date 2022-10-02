@@ -125,6 +125,7 @@ img {
   cursor: pointer;
   text-decoration: none;
   outline: none;
+  max-width: 250px;
 }
 
 .main-button:hover {
@@ -228,6 +229,7 @@ img {
   outline: none;
   cursor: pointer;
   fill: #2d3440;
+  max-width: 250px;
 }
 
 .header-button:hover {
@@ -243,14 +245,14 @@ img {
   fill: #fcfcfc;
 }
 
-.header-nav-item:focus-within .header-button ~ .popup {
+.header-nav-item:focus-within .header-button~.popup {
   display: flex;
   left: 3px;
   box-shadow: 0 8px 16px rgba(45, 52, 64, 0.12);
   top: calc(100% + 10px);
 }
 
-.header-bar-item:focus-within .header-button ~ .popup {
+.header-bar-item:focus-within .header-button~.popup {
   display: flex;
   right: 0;
 }
@@ -363,11 +365,17 @@ img {
   background: #ffcbd8;
 }
 
+.submenu-item.current {
+  background: #ff4a78;
+  pointer-events: none;
+}
+
 .submenu-item:focus-within {
   background: #ff4a78;
 }
 
-.submenu-link:focus {
+.submenu-link:focus,
+.submenu-item.current .submenu-link {
   color: #fcfcfc;
 }
 
@@ -457,11 +465,13 @@ img {
   width: 0;
   height: 0;
 }
+
 .input-search::-ms-reveal {
   display: none;
   width: 0;
   height: 0;
 }
+
 .input-search::-webkit-search-decoration,
 .input-search::-webkit-search-cancel-button,
 .input-search::-webkit-search-results-button,
@@ -510,8 +520,8 @@ img {
   opacity: 0.2;
 }
 
-.search-form .input-search:active ~ .delete-button,
-.search-form .input-search:focus ~ .delete-button {
+.search-form .input-search:active~.delete-button,
+.search-form .input-search:focus~.delete-button {
   opacity: 0.4;
 }
 
@@ -596,9 +606,9 @@ img {
 }
 
 .basket-full .is-full,
-.basket-full ~ .basket .is-full,
+.basket-full~.basket .is-full,
 .basket-empty .is-empty,
-.basket-empty ~ .basket .is-empty {
+.basket-empty~.basket .is-empty {
   display: block;
 }
 
@@ -805,6 +815,7 @@ img {
   outline: none;
   fill: #fcfcfc;
   justify-content: center;
+  max-width: 250px;
 }
 
 .control-button:hover {
@@ -893,6 +904,10 @@ img {
   list-style: none;
   padding: 0 2px;
   align-items: flex-start;
+}
+
+.footer-social-list {
+  transform: translateY(-2px);
 }
 
 .social-item {
@@ -1110,6 +1125,7 @@ img {
   text-decoration: none;
   outline: none;
   fill: #fcfcfc;
+  max-width: 250px;
 }
 
 .submit-button:hover {
@@ -1322,8 +1338,7 @@ img {
 }
 
 .delivery-content {
-  padding: 34px 76px 30px 36px;
-  align-self: center;
+  padding: 104px 76px 30px 36px;
 }
 
 .delivery-title {
@@ -1563,7 +1578,7 @@ img {
   font: inherit;
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px #2d3440 solid;
+  border-bottom: 1px rgba(45, 52, 64, 0.5) solid;
 }
 
 .breadcrumbs {
@@ -1814,11 +1829,11 @@ img {
   border-radius: 50%;
 }
 
-.control-input-radio:checked + .control-radio {
+.control-input-radio:checked+.control-radio {
   border-color: #2d3440;
 }
 
-.control-input-radio:checked + .control-radio::before {
+.control-input-radio:checked+.control-radio::before {
   position: absolute;
   width: 6px;
   height: 6px;
@@ -1830,20 +1845,20 @@ img {
   transform: translateX(-50%) translateY(-50%);
 }
 
-.control-input-radio:hover + .control-radio {
+.control-input-radio:hover+.control-radio {
   border-color: #fcfcfc;
 }
 
-.control-input-radio:checked:hover + .control-radio::before {
+.control-input-radio:checked:hover+.control-radio::before {
   background-color: #fcfcfc;
 }
 
-.control-input-radio:disabled + .control-radio {
+.control-input-radio:disabled+.control-radio {
   border-color: rgba(45, 52, 64, 0.4);
   pointer-events: none;
 }
 
-.control-input-radio:checked:disabled + .control-radio::before {
+.control-input-radio:checked:disabled+.control-radio::before {
   background-color: rgba(45, 52, 64, 0.4);
 }
 
@@ -1861,24 +1876,24 @@ img {
   border-radius: 3px;
 }
 
-.control-input-checkbox:checked + .control-mark {
+.control-input-checkbox:checked+.control-mark {
   background-image: url("../images/svg/mark-check.svg");
 }
 
-.control-input-checkbox:hover + .control-mark {
+.control-input-checkbox:hover+.control-mark {
   background-image: url("../images/svg/mark-uncheck-hover.svg");
 }
 
-.control-input-checkbox:checked:hover + .control-mark {
+.control-input-checkbox:checked:hover+.control-mark {
   background-image: url("../images/svg/mark-check-hover.svg");
 }
 
-.control-input-checkbox:disabled + .control-mark {
+.control-input-checkbox:disabled+.control-mark {
   background-image: url("../images/svg/mark-uncheck.svg");
   opacity: 0.4;
 }
 
-.control-input-checkbox:checked:disabled + .control-mark {
+.control-input-checkbox:checked:disabled+.control-mark {
   background-image: url("../images/svg/mark-check.svg");
   opacity: 0.4;
 }
@@ -2091,6 +2106,7 @@ img {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
