@@ -1845,11 +1845,13 @@ img {
   transform: translateX(-50%) translateY(-50%);
 }
 
-.control-input-radio:hover+.control-radio {
+.control-input-radio:hover+.control-radio,
+.control-input-radio:focus+.control-radio {
   border-color: #fcfcfc;
 }
 
-.control-input-radio:checked:hover+.control-radio::before {
+.control-input-radio:checked:hover+.control-radio::before,
+.control-input-radio:checked:focus+.control-radio::before  {
   background-color: #fcfcfc;
 }
 
@@ -1880,11 +1882,13 @@ img {
   background-image: url("../images/svg/mark-check.svg");
 }
 
-.control-input-checkbox:hover+.control-mark {
+.control-input-checkbox:hover+.control-mark,
+.control-input-checkbox:focus+.control-mark {
   background-image: url("../images/svg/mark-uncheck-hover.svg");
 }
 
-.control-input-checkbox:checked:hover+.control-mark {
+.control-input-checkbox:checked:hover+.control-mark,
+.control-input-checkbox:checked:focus+.control-mark {
   background-image: url("../images/svg/mark-check-hover.svg");
 }
 
